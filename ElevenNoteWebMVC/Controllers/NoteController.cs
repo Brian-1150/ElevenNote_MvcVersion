@@ -48,6 +48,14 @@ namespace ElevenNoteWebMVC.Controllers {
             var model = service.GetNotes();
             return View(model);
         }
+
+        //GET:  Note Details
+        public ActionResult Details(int id) {
+            var svc = CreateNoteService();
+            var model = svc.GetNoteById(id);
+
+            return View(model);
+        }
     }
 
 
