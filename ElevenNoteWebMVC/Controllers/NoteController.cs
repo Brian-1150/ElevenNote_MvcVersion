@@ -30,7 +30,7 @@ namespace ElevenNoteWebMVC.Controllers {
 
             var service = CreateNoteService();
             if (service.CreateNote(model)) {
-                TempData["SaveResult"] = "Your note was successfully created!";
+                TempData["SaveResult"] = " Your note was successfully created!";
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "Note could not be created.");
