@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>NoteCreate</h4>
+        <h4>New Note</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -20,6 +20,7 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                @Html.RouteLink("text", "https://stackoverflow.com/questions/44435536/c-sharp-override-tostring-method-in-variable")
             </div>
         </div>
 
