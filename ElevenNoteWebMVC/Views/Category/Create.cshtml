@@ -2,23 +2,21 @@
 
 @{
     ViewBag.Title = "Create";
-    //string x;
-    //string color = Model.ColorOfCategory.ToString();
-    //if (Model.ColorOfCategory.ToString() == "blue")
-    //    x = "color: blue";
-
+    
 }
 
 <h2>Create</h2>
-<head><script>
-    $(document).ready(function () {
-        $("#colors option").each(function () {
-            if ($(this).val() != '') {
-                $(this).css('background-color', $(this).val());
-            }
+<head>
+    <script>
+        $(document).ready(function () {
+            $("#colors option").each(function () {
+                if ($(this).val() != '') {
+                    $(this).css('background-color', $(this).val());
+                }
+            });
         });
-    });
-</script></head>
+    </script>
+</head>
 
 @using (Html.BeginForm())
 {
@@ -42,18 +40,18 @@
                 <select id="colors">
                     <option value="">Please select a color...</option>
                     <option value="Red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
                     <option value="Green">Green</option>
                     <option value="Blue">Blue</option>
-                    <option value="Yellow">Yellow</option>
+                    <option value="Violet">Violet</option>
                 </select>
 
-                  
 
-                @Html.EnumDropDownListFor(model => model.ColorOfCategory, htmlAttributes: new { style = "color: blue;" })
-
+                
                 @Html.ValidationMessageFor(model => model.ColorOfCategory, "", new { @class = "text-danger" })
             </div>
-            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -68,5 +66,22 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script language="javascript" type="text/javascript">
+        $(function () {
+
+            $("#colors option[value='Red']").css('color', 'red');
+            $("#colors option[value='Blue']").css('color', 'blue');
+            $("#colors option[value='Green']").css('color', 'green');
+            $("#colors option[value='Yellow']").css('color', 'yellow');
+            $("#colors option[value='Orange']").css('color', 'orange');
+            $("#colors option[value='Violet']").css('color', 'violet');
+
+
+           
+
+        });
+</script>
 }
+           
 
