@@ -9,7 +9,8 @@ namespace ElevenNote.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            ContextKey = "ElevenNoteWebMVC.Data.ApplicationDbContext";
         }
 
         protected override void Seed(ElevenNoteWebMVC.Data.ApplicationDbContext context)
